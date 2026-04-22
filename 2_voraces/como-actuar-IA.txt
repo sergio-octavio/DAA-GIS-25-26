@@ -1,0 +1,126 @@
+# 🧠 Indicaciones para resolver ejercicios de algoritmia
+
+Este documento define **cómo deben resolverse los ejercicios**, priorizando claridad, simplicidad y eficiencia.  
+Debe seguirse siempre este estilo.
+
+---
+
+## ✅ 1. Estructura general del código
+
+- Usar siempre una función principal:
+  
+```python
+def main():
+    ...
+    
+main()
+
+❌ NO usar:
+
+if __name__ == "__main__":
+    main()
+
+👉 Queremos una ejecución directa y simple.
+
+✅ 2. Entrada de datos (INPUT)
+🔹 Regla principal
+Usar siempre input() (no sys.stdin.read()).
+El programa debe:
+Leer línea a línea
+Terminar automáticamente al pulsar Enter
+Mostrar el resultado inmediatamente
+🔹 Formato recomendado
+n, m = map(int, input().strip().split())
+
+👉 Siempre usar:
+
+.strip() → elimina espacios extra
+.split() → separa correctamente
+map(int, ...) → convierte a enteros
+🔹 Lectura de múltiples líneas
+for _ in range(m):
+    u, v, d = map(int, input().strip().split())
+✅ 3. Estilo de programación
+🔹 Usar def en lugar de class
+
+❌ No usar clases (salvo que sea imprescindible)
+
+✔ Usar funciones simples:
+
+def find(parent, x):
+    ...
+✅ 4. Simplicidad ante todo
+Evitar código innecesario
+Evitar estructuras complejas
+Usar nombres claros y cortos
+Priorizar soluciones directas
+✅ 5. Eficiencia
+
+Siempre buscar:
+
+Complejidad óptima (ej: O(n log n) en grafos)
+Uso de estructuras eficientes:
+listas
+arrays
+funciones simples
+
+Ejemplo típico (ordenación voraz):
+
+edges.sort()
+✅ 6. Transformación de datos (MUY IMPORTANTE)
+
+Antes de aplicar un algoritmo:
+
+👉 Transformar los datos si es necesario
+
+Ejemplo:
+
+coste = (dist + 4) // 5
+
+✔ Siempre adaptar los datos ANTES del algoritmo voraz si el problema lo requiere.
+
+✅ 7. Algoritmos voraces (guía general)
+Leer datos
+Transformar datos (si hace falta)
+Ordenar
+Recorrer seleccionando lo óptimo
+Acumular resultado
+Imprimir
+✅ 8. Salida (OUTPUT)
+Usar print() directamente
+Sin formatos innecesarios
+Salida limpia
+print(resultado)
+❌ Cosas que NO quiero
+sys.stdin.read()
+class innecesarias
+Código excesivamente complejo
+Estructuras difíciles de seguir
+Necesidad de Ctrl+D / EOF
+🎯 Objetivo final
+
+Código que sea:
+
+✔ Simple
+✔ Claro
+✔ Rápido de escribir en examen
+✔ Eficiente
+✔ Funcione directamente en terminal con input()
+🧩 Plantilla base
+def main():
+    n, m = map(int, input().strip().split())
+
+    datos = []
+    for _ in range(m):
+        a, b, c = map(int, input().strip().split())
+        datos.append((a, b, c))
+
+    # lógica del algoritmo
+    resultado = 0
+
+    print(resultado)
+
+main()
+🧠 Filosofía
+
+“Soluciones simples, correctas y eficientes > soluciones complejas”

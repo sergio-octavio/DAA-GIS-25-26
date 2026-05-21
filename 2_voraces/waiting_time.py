@@ -28,7 +28,7 @@ def calculate_waiting_time(sol, tasks):
         task = sol[i]
         accum += tasks[task]
         times.append(accum)
-    print(times)
+    print(times)    
     print(sum(times))
 
 
